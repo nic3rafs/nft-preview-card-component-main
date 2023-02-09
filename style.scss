@@ -1,0 +1,137 @@
+// Primary colors
+$soft-blue: hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+
+// Neutral colors
+$dark-blue-main-bg: hsl(217, 54%, 11%);
+$dark-blue-card-bg: hsl(216, 50%, 16%);
+$dark-blue-line: hsl(215, 32%, 27%);
+$white: hsl(0, 0%, 100%);
+
+h1,
+p,
+body {
+  margin: 0;
+}
+body {
+  font-size: 18px;
+  background-color: $dark-blue-main-bg;
+
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Outfit", sans-serif;
+}
+.nft-card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  background-color: $dark-blue-card-bg;
+  padding: 18px;
+  border-radius: 15px;
+  gap: 16px;
+  .image-container {
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    &:hover {
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: cyan;
+        opacity: 0.5;
+        border-radius: 10px;
+        z-index: 0;
+      }
+      .view-icon {
+        display: block;
+        z-index: 1;
+      }
+    }
+
+    .nft-img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 10px;
+    }
+    .view-icon {
+      font-size: 36px;
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+    }
+  }
+  .title {
+    color: $white;
+    font-size: 24px;
+    cursor: pointer;
+    &:hover {
+      color: $cyan;
+    }
+  }
+  .description {
+    color: $soft-blue;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 150%;
+  }
+  .price-time {
+    display: flex;
+    justify-content: space-between;
+    div {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      img {
+        margin: 0;
+      }
+    }
+    .price {
+      color: $cyan;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .time-left {
+      color: $soft-blue;
+      font-weight: 400;
+      font-size: 14px;
+    }
+  }
+  .line {
+    background-color: $dark-blue-line;
+    height: 1px;
+    border-radius: 1px;
+  }
+  .author {
+    color: $soft-blue;
+    font-weight: 400;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    img {
+      width: 10%;
+      margin: 0;
+      border: 1px solid $white;
+      border-radius: 100%;
+    }
+    span {
+      color: $white;
+      cursor: pointer;
+      &:hover {
+        color: $cyan;
+      }
+    }
+    
+  }
+}
